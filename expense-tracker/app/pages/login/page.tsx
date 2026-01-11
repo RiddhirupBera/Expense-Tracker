@@ -5,6 +5,7 @@ import { addUser } from "@/app/actions/addUser"
 export default function Login (){
     return(
         <>
+        <div className="basic-container">
         <form action={loginUser}>
               <input
                 name="username"
@@ -21,6 +22,7 @@ export default function Login (){
         
               <button type="submit">Login</button>
             </form>
+            </div>
         </>    
     )
 }

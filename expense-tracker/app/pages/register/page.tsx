@@ -1,9 +1,15 @@
 "use client";
 
 import { addUser } from "@/app/actions/addUser";
+import { redirect } from "next/navigation";
+import { checkLoggedIn } from "@/app/actions/checkLoggedIn";
 
 export default function Register() {
+
+  checkLoggedIn();
   return (
+    <>
+    <div className="basic-container">
     <form action={addUser}>
       <input
         name="username"
@@ -20,5 +26,8 @@ export default function Register() {
 
       <button type="submit">Register</button>
     </form>
+    <button onClick={()=>{redirect("/pages/login")}}>Login</button>
+    </div>
+    </>
   );
 }

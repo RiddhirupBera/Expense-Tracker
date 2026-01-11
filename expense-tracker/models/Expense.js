@@ -1,6 +1,9 @@
 import {Schema, model, models} from 'mongoose';
 
 const ExpenseSchema = new Schema({
+    username : {
+        type : String
+    },
     name : {
         type : String,
         required : [true, 'Name is required']

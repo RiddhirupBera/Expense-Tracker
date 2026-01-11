@@ -4,6 +4,7 @@ import { expenses } from "@/lib/expenses";
 import { revalidatePath } from "next/cache";
 import  Expense  from "@/models/Expense";
 import connectDB from  "@/config/database";
+import { cookies } from "next/headers";
 
 
 export async function addExpense(formData: FormData) {
@@ -22,15 +23,11 @@ export async function addExpense(formData: FormData) {
     date: new Date().toISOString().split("T")[0],
   });
 
-  let expenseObject = {
-    id: Date.now().toString(),
-    title,
-    amount, 
-    category,
-    date: new Date().toISOString().split("T")[0],
-  }
+  const cookieStore = await cookies();   
+  const username = cookieStore.get("username")?.value;
+  
   let expense = new Expense({
-    //id: Date.now().toString(),
+    username,
     name : title,
     amount, 
     category,

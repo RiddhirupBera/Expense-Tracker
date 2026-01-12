@@ -1,6 +1,7 @@
 // TableDisplay.tsx (SERVER)
 import { getExpenses } from "../actions/getExpenses";
-import { TableDisplay } from "./TableDisplay";
+import TableDisplay from "./TableDisplay";
+
 
 export default async function SetTableDisplay() {
   const expenses = await getExpenses();

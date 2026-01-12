@@ -50,3 +50,44 @@ body {
 .table-button:hover{
   background-color: rgb(15, 154, 107);
 }
+
+.editModal{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(111, 223, 238);
+  border: 2px solid black;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+}
+.editModalComps{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+
+}
+
+.editModal input{
+  border: 2px solid #0a0a0a;
+  border-radius: 8px;
+}
+
+.editModalButton{
+  border: 2px solid #0a0a0a;
+  border-radius: 8px;
+  width: 5rem;
+  background-color: blueviolet;
+}
+.closeBtn{    
+  position: absolute;   /* REQUIRED */
+  top: 8px;
+  right: 8px;
+  
+}
+
+
+

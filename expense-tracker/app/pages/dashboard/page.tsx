@@ -1,5 +1,6 @@
 "use server"
 import { getExpenses } from "@/app/actions/getExpenses";
+import SetTableDisplay from "@/app/components/SetTableDisplay";
 
 export default async function Dashboard() {
   const expenses = await getExpenses();
@@ -13,13 +14,7 @@ export default async function Dashboard() {
       
       <div className="basic-container">
         <div><h1>Dashboard</h1></div>
-      <ul>
-      {expenses.map((e) => (
-        <div key={e._id}>
-          <li>{e.name} - ₹{e.amount}</li>
-        </div>
-      ))}
-      </ul>
+        <SetTableDisplay/>
       
       <div><span>{total}</span></div>
       </div>

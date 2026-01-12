@@ -32,3 +32,21 @@ body {
   margin: 5rem;
   flex-direction: column;
 }
+
+.table-style{
+  width: 80%;
+}
+
+.table-style th{
+  text-align: center;
+}
+.table-style td{
+  text-align: center;
+}
+
+.table-button{
+  background-color: aquamarine;
+}
+.table-button:hover{
+  background-color: rgb(15, 154, 107);
+}

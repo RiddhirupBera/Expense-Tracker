@@ -8,5 +8,7 @@ export  async function checkLoggedIn () {
 
     if(username){
         redirect("/pages/dashboard");
+    }else{
+        redirect("/pages/register");
     }
 }

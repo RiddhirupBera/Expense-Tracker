@@ -11,7 +11,7 @@ interface Expense {
 }
 export default function TableDisplay({expenses}:{expenses : Expense[]}){
 
-    const [modal,setModal] = useState(false);
+    const [selectedExpense,setSelectedExpense] = useState<Expense | null>(null);
 
     return(
     <>
@@ -34,7 +34,7 @@ export default function TableDisplay({expenses}:{expenses : Expense[]}){
                 <td>{exp.amount}</td>
                 <td>{exp.category}</td>
                 <td>{exp.date}</td>
-                <td><button className="table-button" onClick={()=>{setModal(true)}}>Edit</button></td>
+                <td><button className="table-button" onClick={()=>{setSelectedExpense(exp)}}>Edit</button></td>
                 <td><button className="table-button">Delete</button></td>
               </tr>
              
@@ -42,16 +42,14 @@ export default function TableDisplay({expenses}:{expenses : Expense[]}){
           }
         </tbody>
       </table>
-      {modal && (
+      {selectedExpense && (
         <div className="editModal">
-          <button className="closeBtn" onClick={() => setModal(false)}>
-    ✕
-  </button>
-          <div style={{fontSize : "2rem"}}>Edit Expense</div>
+          <button className="closeBtn" onClick={() => setSelectedExpense(null)}>✕</button>
+        <div style={{fontSize : "2rem"}}>Edit Expense</div>
         <div className="editModalComps">
-                <input  name="title" placeholder="Expense title" required />
-                <input  name="amount" type="number" placeholder="Amount" required />
-                <select  name="category">
+                <input  name="name" placeholder="Expense title" defaultValue={selectedExpense.name} required />
+                <input  name="amount" type="number" placeholder="Amount" defaultValue={selectedExpense.amount} required />
+                <select  name="category" defaultValue={selectedExpense.category}>
                   <option>Food</option>
                   <option>Travel</option>
                   <option>Medicine</option>
@@ -59,7 +57,7 @@ export default function TableDisplay({expenses}:{expenses : Expense[]}){
                   <option>Investments</option>
                 </select>
           
-                <button className="editModalButton" type="submit">Add</button>
+                <button className="editModalButton" >Confirm</button>
         </div>
         </div>
       )}

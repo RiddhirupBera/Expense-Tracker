@@ -3,10 +3,14 @@
 import { addUser } from "@/app/actions/addUser";
 import { redirect } from "next/navigation";
 import { checkLoggedIn } from "@/app/actions/checkLoggedIn";
+import { useEffect } from "react";
 
 export default function Register() {
 
-  checkLoggedIn();
+  useEffect(()=>{
+    checkLoggedIn();
+  },[])
+  
   return (
     <>
     <div className="basic-container">

@@ -1,7 +1,6 @@
 "use server";
 
 import { expenses } from "@/lib/expenses";
-import { revalidatePath } from "next/cache";
 import  Expense  from "@/models/Expense";
 import connectDB from  "@/config/database";
 import { cookies } from "next/headers";
@@ -15,13 +14,6 @@ export async function addExpense(formData: FormData) {
   const amount = Number(formData.get("amount"));
   const category = formData.get("category") as string;
 
-  expenses.push({
-    id: Date.now().toString(),
-    title,
-    amount, 
-    category,
-    date: new Date().toISOString().split("T")[0],
-  });
 
   const cookieStore = await cookies();   
   const username = cookieStore.get("username")?.value;
@@ -41,6 +33,5 @@ export async function addExpense(formData: FormData) {
     console.error(err);
    }
 
-    revalidatePath("/expense");
 
 }

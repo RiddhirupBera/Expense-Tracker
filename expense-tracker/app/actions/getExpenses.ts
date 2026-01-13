@@ -15,5 +15,13 @@ export async function getExpenses() {
   
   const expenses = await Expense.find({"username" : username}).lean();
   console.log(expenses, username)
-  return expenses;
+
+  return expenses.map(exp => ({
+    _id: exp._id.toString(), 
+    name: exp.name,
+    amount: exp.amount,
+    category: exp.category,
+    date: exp.date,
+  }));
+  
 }

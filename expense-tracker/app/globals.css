@@ -95,5 +95,22 @@ body {
 }
 
 
+.sideNav{
+  position: fixed;
+  width: 160px;
+  background-color: rgb(5, 12, 57);
+  top: 56px; 
+  left: 0;
+  height: calc(100vh - 60px);
+  padding-top: 20px;
+}
+
+.sideNavComps{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  color: aliceblue;
+}
 
 

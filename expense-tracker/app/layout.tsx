@@ -29,9 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SideNavBar/>
         <Navbar/>
+        <div style={{display:"flex",justifyContent : "center"}}>
+        <SideNavBar/>
         {children}
+        </div>
       </body>
     </html>
   );

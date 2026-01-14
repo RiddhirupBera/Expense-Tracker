@@ -20,8 +20,9 @@ export default function ExpenseForm() {
         <option>Medicine</option>
         <option>Leisure</option>
         <option>Investments</option>
+        <option>Daily Needs</option>
       </select>
-
+      <input name="date" type="date" placeholder="Date" required/>
       <button type="submit">Add</button>
     </form>
   );

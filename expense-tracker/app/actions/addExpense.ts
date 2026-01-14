@@ -13,6 +13,7 @@ export async function addExpense(formData: FormData) {
   const title = formData.get("title") as string;
   const amount = Number(formData.get("amount"));
   const category = formData.get("category") as string;
+  const date = formData.get("date");
 
 
   const cookieStore = await cookies();   
@@ -23,7 +24,7 @@ export async function addExpense(formData: FormData) {
     name : title,
     amount, 
     category,
-    date: new Date().toISOString().split("T")[0],
+    date,
   })
   
   try {

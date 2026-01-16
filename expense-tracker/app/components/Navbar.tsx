@@ -9,7 +9,7 @@ export default async function Navbar() {
   const username = cookieStore.get("username")?.value ?? "";
 
   return (
-    <nav style={styles.nav}>
+    <nav className="topNav">
       <h3>Expense Tracker</h3>
 
       <NavLinks username={username}/>

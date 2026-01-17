@@ -18,6 +18,6 @@ export async function UpdateExpense(expense : ExpenseInterface){
     amount: expense.amount,
     category: expense.category,
   });
-  revalidatePath("/pages/expense-list")
+  revalidatePath("/expense-list")
 
 }

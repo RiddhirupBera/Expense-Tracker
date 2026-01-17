@@ -4,9 +4,9 @@ import { redirect } from "next/navigation";
 import { checkLoggedIn } from "./actions/checkLoggedIn";
 
 export default async function ExpensePage() {
-  redirect("/register");
+  //redirect("/register");
   await checkLoggedIn();
-  //redirect("/pages/register");
+  //redirect("/register");
   return (
     <main style={{ padding: "2rem" }}>
       <h1>Expense Tracker</h1>

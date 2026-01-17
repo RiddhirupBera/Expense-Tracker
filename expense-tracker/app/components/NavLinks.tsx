@@ -7,9 +7,9 @@ interface NavProps{
 export default function NavLinks({username}:NavProps){
     return(
         <div style={styles.links}>
-        <Link href="/pages/dashboard">Dashboard</Link>
+        <Link href="/dashboard">Dashboard</Link>
         <span>Hi, {username}</span>
-        <Link href="/pages/login">Logout</Link>
+        <Link href="/login">Logout</Link>
       </div>
     )
 }

@@ -14,6 +14,6 @@ interface ExpenseInterface {
 export async function DeleteExpense(expense : ExpenseInterface){
     await connectDB();
     await Expense.findByIdAndDelete(expense._id);
-    revalidatePath("/pages/expense-list")
+    revalidatePath("/expense-list")
 
 }

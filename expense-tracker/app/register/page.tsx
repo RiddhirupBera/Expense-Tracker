@@ -30,7 +30,7 @@ export default function Register() {
 
       <button type="submit">Register</button>
     </form>
-    <button onClick={()=>{redirect("/pages/login")}}>Login</button>
+    <button onClick={()=>{redirect("/login")}}>Login</button>
     </div>
     </>
   );

@@ -7,8 +7,8 @@ export  async function checkLoggedIn () {
     const username = cookieStore.get("username")?.value;
 
     if(username){
-        redirect("/pages/dashboard");
+        redirect("/dashboard");
     }else{
-        redirect("/pages/register");
+        redirect("/register");
     }
 }

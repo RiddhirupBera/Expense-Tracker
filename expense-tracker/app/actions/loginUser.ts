@@ -22,7 +22,7 @@ export async function loginUser (formData : FormData){
             httpOnly: true,
             path: "/",
         });
-        redirect("/pages/dashboard")
+        redirect("/dashboard")
     }
     else{
         

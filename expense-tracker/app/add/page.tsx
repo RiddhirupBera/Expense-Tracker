@@ -1,4 +1,4 @@
-import ExpenseForm from "@/app/pages/ExpenseForm";
+import ExpenseForm from "@/app/ExpenseForm";
 
 export default function Add() {
   return(

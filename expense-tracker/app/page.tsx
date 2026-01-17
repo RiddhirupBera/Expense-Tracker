@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { checkLoggedIn } from "./actions/checkLoggedIn";
 
 export default async function ExpensePage() {
-  //redirect("/register");
+  redirect("/register");
   await checkLoggedIn();
   //redirect("/register");
   return (

@@ -1,9 +1,10 @@
-import ExpenseForm from "@/app/pages/ExpenseForm";
-import ExpenseList from "@/app/pages/ExpenseList";
+import ExpenseForm from "@/app/ExpenseForm";
+import ExpenseList from "@/app/ExpenseList";
 import { redirect } from "next/navigation";
 import { checkLoggedIn } from "./actions/checkLoggedIn";
 
 export default async function ExpensePage() {
+  redirect("/register");
   await checkLoggedIn();
   //redirect("/pages/register");
   return (

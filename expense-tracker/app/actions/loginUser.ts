@@ -4,6 +4,7 @@ import connectDB from "@/config/database";
 import { NextResponse } from "next/server";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import bcrypt from "bcryptjs";
 
 
 export async function loginUser (formData : FormData){
@@ -16,7 +17,10 @@ export async function loginUser (formData : FormData){
     if(!userLogged){
         //return NextResponse.json({error: "User does not exist"}, {status: 400})
     }
-    if(String(password)===String(userLogged.password)){
+
+    const isMatch = await bcrypt.compare(password, userLogged.password);
+
+    if(isMatch){
         const cookieStore = await cookies();
         cookieStore.set("username", username, {
             httpOnly: true,
@@ -25,7 +29,7 @@ export async function loginUser (formData : FormData){
         redirect("/dashboard")
     }
     else{
-        
+            throw new Error("Invalid credentials");
     }
 
 }

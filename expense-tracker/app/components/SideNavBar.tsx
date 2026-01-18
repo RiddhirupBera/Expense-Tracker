@@ -8,6 +8,7 @@ export default function SideNavBar(){
             <div className="sideNavComps">
             <Link href="/dashboard">Dashboard</Link>
             <Link href="/add">Add Expense</Link>
+            <Link href="/filter">Filter Expenses</Link>
             <Link href="/expense-list">View Expenses</Link>
             </div>
         </div>

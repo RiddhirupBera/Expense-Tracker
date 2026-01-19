@@ -13,11 +13,9 @@ export async function addUser (formData : FormData){
     const hashedPassword = await bcrypt.hash(password, 10);
 
     let user = new User({
-    //id: Date.now().toString(),
     username,
-    password : hashedPassword,
-    date: new Date().toISOString().split("T")[0],
-  })
+    password : hashedPassword
+    })
   
   try {
     await user.save();

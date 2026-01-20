@@ -90,7 +90,7 @@ export default async function Dashboard() {
           </thead>
           <tbody>
             {thisMonthExpensesDisplay.map((m)=>(
-              <tr>
+              <tr key={m._id}>
               <td>{m.name}</td>
               <td>{m.amount}</td>
             </tr>

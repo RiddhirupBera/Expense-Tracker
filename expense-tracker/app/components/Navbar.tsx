@@ -1,32 +1,26 @@
-"use server"
 import Link from "next/link";
 import NavLinks from "./NavLinks";
-import { cookies } from "next/headers";
+import { getCurrentUser } from "@/app/actions/auth";
 
 export default async function Navbar() {
+  const user = await getCurrentUser();
 
-  const cookieStore = await cookies();   
-  const username = cookieStore.get("username")?.value ?? "";
+  if (!user) {
+    return (
+      <nav className="topNav">
+        <h3>Expense Tracker</h3>
+        <div style={{ display: "flex", gap: "1rem" }}>
+          <Link href="/login">Login</Link>
+          <Link href="/register">Register</Link>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav className="topNav">
       <h3>Expense Tracker</h3>
-
-      <NavLinks username={username}/>
+      <NavLinks username={user.username} />
     </nav>
   );
 }
-
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "1rem 2rem",
-    background: "#0f172a",
-    color: "white",
-  },
-  links: {
-    display: "flex",
-    gap: "1rem",
-  },
-};

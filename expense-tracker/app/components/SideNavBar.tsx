@@ -10,6 +10,7 @@ export default function SideNavBar(){
             <Link href="/add">Add Expense</Link>
             <Link href="/filter">Filter Expenses</Link>
             <Link href="/expense-list">View Expenses</Link>
+            <Link href="/lended">Lended Expenses</Link>
             </div>
         </div>
     )
